@@ -25,58 +25,73 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
 
   return (
     <div className="modal-overlay">
-      <div className="modal-card" style={{ maxWidth: '480px' }}>
-        <div className="modal-header" style={{ background: 'linear-gradient(135deg, #4a7729 0%, #375b1e 100%)', color: 'white', padding: '1rem 1.25rem' }}>
-          <div className="modal-title" style={{ color: 'white', gap: '0.85rem' }}>
-            <div style={{
-              width: '56px',
-              height: '56px',
-              borderRadius: '12px',
-              background: '#ffffff',
-              border: '2px solid #daaa00',
-              padding: '3px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-              boxShadow: '0 4px 12px rgba(0,0,0,0.22)'
-            }}>
-              <img src="/elefant-logo.png" alt="Logotip EleFanT" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-            </div>
-            <div>
-              <div style={{ fontSize: '1.35rem', fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
-                <span style={{ color: '#fef08a' }}>Ele</span>
-                <span style={{ color: '#ffffff' }}>Fan</span>
-                <span style={{ color: '#fef08a' }}>T</span>
-              </div>
-              <div style={{ fontSize: '0.78rem', fontWeight: 600, color: '#e2e8f0', marginTop: '2px' }}>
-                Elecció de Fanals i Taulells · Sant Joan de Vilatorrada
-              </div>
-            </div>
+      <div className="login-split-card">
+        {/* Left / Top Brand Showcase Column */}
+        <div className="login-brand-pane">
+          <div className="login-logo-showcase">
+            <img src="/elefant-logo.png" alt="Logotip oficial EleFanT" />
+          </div>
+
+          <div style={{ fontSize: '2.05rem', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 1.05 }}>
+            <span style={{ color: '#fef08a' }}>Ele</span>
+            <span style={{ color: '#ffffff' }}>Fan</span>
+            <span style={{ color: '#fef08a' }}>T</span>
+          </div>
+
+          <div style={{
+            fontSize: '0.84rem',
+            color: '#f1f5f9',
+            marginTop: '0.35rem',
+            fontWeight: 500,
+            lineHeight: 1.35
+          }}>
+            <strong style={{ color: '#fef08a' }}>Ele</strong>cció de{' '}
+            <strong style={{ color: '#ffffff' }}>Fan</strong>als i{' '}
+            <strong style={{ color: '#fef08a' }}>T</strong>aulells
+          </div>
+
+          <div style={{
+            width: '48px',
+            height: '2px',
+            background: 'rgba(250, 204, 21, 0.55)',
+            borderRadius: '999px',
+            margin: '0.9rem 0 0.75rem'
+          }} />
+
+          <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.3 }}>
+            Ajuntament de Sant Joan de Vilatorrada
+          </div>
+          <div style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.78)', marginTop: '2px' }}>
+            Propaganda Electoral
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="modal-body">
-          <p style={{ fontSize: '0.88rem', color: '#64748b', marginBottom: '1.2rem' }}>
-            Identifiqueu-vos amb les credencials proporcionades per l'Ajuntament de Sant Joan de Vilatorrada per gestionar les preferències de propaganda electoral.
+        {/* Right / Bottom Login Form Column */}
+        <form onSubmit={handleSubmit} className="login-form-pane">
+          <h2 style={{ fontSize: '1.28rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.3rem' }}>
+            Accés al sistema
+          </h2>
+          <p style={{ fontSize: '0.85rem', color: '#64748b', marginBottom: '1.25rem', lineHeight: 1.45 }}>
+            Identifiqueu-vos amb les credencials facilitades a la vostra candidatura o a l'administració municipal.
           </p>
 
           {error && (
             <div style={{
               background: '#fef2f2',
               color: '#dc2626',
-              padding: '0.75rem',
+              padding: '0.7rem 0.85rem',
               borderRadius: '8px',
-              fontSize: '0.85rem',
+              fontSize: '0.84rem',
               marginBottom: '1rem',
-              border: '1px solid #fca5a5'
+              border: '1px solid #fca5a5',
+              fontWeight: 600
             }}>
               {error}
             </div>
           )}
 
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+          <div style={{ marginBottom: '0.95rem' }}>
+            <label style={{ display: 'block', fontSize: '0.81rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
               Usuari (Sigles del partit / Admin)
             </label>
             <div style={{ position: 'relative' }}>
@@ -86,6 +101,7 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Ex. ERC, JUNTS, PSC, admin"
+                autoComplete="username"
                 required
                 style={{
                   width: '100%',
@@ -98,8 +114,8 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
             </div>
           </div>
 
-          <div style={{ marginBottom: '1.4rem' }}>
-            <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
+          <div style={{ marginBottom: '1.3rem' }}>
+            <label style={{ display: 'block', fontSize: '0.81rem', fontWeight: 700, color: '#334155', marginBottom: '0.35rem' }}>
               Contrasenya
             </label>
             <div style={{ position: 'relative' }}>
@@ -109,6 +125,7 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
+                autoComplete="current-password"
                 required
                 style={{
                   width: '100%',
@@ -128,8 +145,8 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
               background: '#4a7729',
               color: 'white',
               border: 'none',
-              padding: '0.75rem',
-              borderRadius: '8px',
+              padding: '0.78rem',
+              borderRadius: '9px',
               fontWeight: 700,
               fontSize: '0.95rem',
               cursor: 'pointer',
@@ -137,7 +154,7 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              boxShadow: '0 4px 10px rgba(74, 119, 41, 0.3)'
+              boxShadow: '0 4px 12px rgba(74, 119, 41, 0.3)'
             }}
           >
             <LogIn size={18} />
@@ -146,8 +163,8 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
 
           {/* Quick Demo Access Selector (only shown when enabled by server) */}
           {demoLoginEnabled && (
-            <div style={{ marginTop: '1.5rem', paddingTop: '1.2rem', borderTop: '1px solid #e2e8f0' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', fontWeight: 700, color: '#475569', marginBottom: '0.75rem' }}>
+            <div style={{ marginTop: '1.35rem', paddingTop: '1.1rem', borderTop: '1px solid #e2e8f0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', fontWeight: 700, color: '#475569', marginBottom: '0.65rem' }}>
                 <Sparkles size={14} color="#daaa00" />
                 <span>Accés ràpid de prova (Fes clic per entrar):</span>
               </div>
@@ -162,8 +179,8 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
                       background: '#f1f5f9',
                       border: `1px solid ${p.color}`,
                       borderRadius: '6px',
-                      padding: '0.35rem 0.6rem',
-                      fontSize: '0.78rem',
+                      padding: '0.32rem 0.58rem',
+                      fontSize: '0.77rem',
                       fontWeight: 700,
                       color: '#1e293b',
                       cursor: 'pointer',
@@ -184,8 +201,8 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
                     background: '#fef2f2',
                     border: '1px solid #ef4444',
                     borderRadius: '6px',
-                    padding: '0.35rem 0.65rem',
-                    fontSize: '0.78rem',
+                    padding: '0.32rem 0.62rem',
+                    fontSize: '0.77rem',
                     fontWeight: 700,
                     color: '#991b1b',
                     cursor: 'pointer',

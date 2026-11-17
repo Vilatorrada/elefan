@@ -345,6 +345,97 @@ option {
   min-width: 0;
 }
 
+/* Showcase Split Login Card */
+.login-split-card {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 18px;
+  width: 94%;
+  max-width: 760px;
+  max-height: 92vh;
+  max-height: 92dvh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.35);
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+.login-brand-pane {
+  width: 305px;
+  flex-shrink: 0;
+  background: radial-gradient(circle at 50% 28%, rgba(250, 204, 21, 0.16) 0%, transparent 62%),
+              linear-gradient(155deg, #4a7729 0%, #2d4c17 100%);
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 3px solid var(--color-gold);
+}
+
+.login-logo-showcase {
+  width: 168px;
+  height: 168px;
+  background: #ffffff;
+  border-radius: 26px;
+  border: 3px solid var(--color-gold);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  margin-bottom: 1.15rem;
+}
+
+.login-logo-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.login-form-pane {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 2rem 2.1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+}
+
+@media (max-width: 680px) {
+  .login-split-card {
+    flex-direction: column;
+    max-width: 440px;
+    overflow-y: auto;
+  }
+
+  .login-brand-pane {
+    width: 100%;
+    padding: 1.35rem 1.2rem;
+    border-right: none;
+    border-bottom: 3px solid var(--color-gold);
+  }
+
+  .login-logo-showcase {
+    width: 116px;
+    height: 116px;
+    border-radius: 20px;
+    padding: 7px;
+    margin-bottom: 0.75rem;
+  }
+
+  .login-form-pane {
+    padding: 1.35rem 1.3rem;
+    overflow-y: visible;
+  }
+}
+
 /* Admin Panel Navigation Tabs — guaranteed non-shrinking & high contrast */
 .admin-tabs {
   flex-shrink: 0;
