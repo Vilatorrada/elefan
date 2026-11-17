@@ -1,0 +1,29 @@
+# Node dependencies & build artifacts
+node_modules/
+**/node_modules/
+client/dist/
+dist/
+
+# Git & local environment files
+.git/
+.gitignore
+.env
+.env.*
+!.env.example
+
+# SQLite local runtime files (container creates its own SQLite DB inside /app/data volume)
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+
+# Temporary & OS files
+*.log
+*.tmp
+.DS_Store
+.vscode/
+.idea/
+
+# Documentation & reference PDFs (not needed inside container runtime)
+*.md
+*.pdf

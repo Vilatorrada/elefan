@@ -1,0 +1,16 @@
+{
+  "name": "fanals-santjoan-server",
+  "version": "1.0.0",
+  "description": "Backend API per a la selecció de fanals i emplaçaments de propaganda electoral de Sant Joan de Vilatorrada",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning index.js",
+    "dev": "node --no-warnings=ExperimentalWarning --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "pdfkit": "^0.15.0"
+  }
+}

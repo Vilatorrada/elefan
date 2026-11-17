@@ -1,0 +1,654 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  color-scheme: light;
+  --color-primary: #4a7729;
+  --color-primary-dark: #375b1e;
+  --color-primary-light: #5d9334;
+  --color-gold: #daaa00;
+  --color-gold-hover: #b89000;
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+html,
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#root,
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Guarantee crisp dark text on white background for all form controls regardless of OS theme */
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+select,
+textarea {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-size: 0.85rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Header bar styling */
+.app-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  padding: 0.55rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 1rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1200;
+}
+
+.header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.brand-crest {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--color-gold);
+}
+
+.brand-title {
+  min-width: 0;
+}
+
+.brand-title h1 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-title p {
+  font-size: 0.73rem;
+  opacity: 0.92;
+  color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.header-collapsible {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 1rem;
+  flex-wrap: wrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  flex-wrap: wrap;
+}
+
+.header-mobile-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  padding: 0.42rem 0.6rem;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Header Buttons */
+.btn-hdr {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.42rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+}
+
+.btn-hdr:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-hdr-accent {
+  background: var(--color-gold);
+  color: #0f172a;
+  border: 1px solid #fde047;
+  font-weight: 800;
+}
+
+.btn-hdr-accent:hover {
+  background: #f59e0b;
+  color: #0f172a;
+}
+
+/* Map area container */
+.map-layout {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #e2e8f0;
+}
+
+/* Top-left map toolbar positioned next to Leaflet +/- zoom buttons so nothing overlaps */
+.map-top-controls {
+  position: absolute;
+  top: 10px;
+  left: 54px;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: calc(100% - 66px);
+}
+
+.map-top-controls.with-side-panel {
+  max-width: calc(100% - 455px);
+}
+
+.map-search-form {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 3px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  border: 1px solid #cbd5e1;
+}
+
+.map-search-input {
+  border: none !important;
+  outline: none;
+  padding: 4px 6px;
+  font-size: 0.83rem;
+  width: 190px;
+  background: transparent !important;
+  color: #0f172a !important;
+}
+
+/* Floating right-hand map panel (Lot Priority Panel for Party & Lot Builder for Admin) */
+.map-side-panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 385px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100% - 24px);
+  z-index: 1130;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Modal styling — fixed header/tabs/footer with independently scrollable body */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  padding: 0.85rem;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.modal-card {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 16px;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100dvh - 1.7rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.22s ease-out;
+}
+
+.modal-card.modal-card-wide {
+  max-width: 1040px;
+}
+
+.modal-header {
+  flex-shrink: 0;
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #f8fafc;
+}
+
+.modal-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+/* Admin Panel Navigation Tabs — guaranteed non-shrinking & high contrast */
+.admin-tabs {
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem 0;
+  background: #e2e8f0;
+  border-bottom: 2px solid #cbd5e1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-tab-btn {
+  flex: 1 0 auto;
+  padding: 0.62rem 0.9rem;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: rgba(255, 255, 255, 0.55);
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 0.83rem;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.admin-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.88);
+  color: #0f172a;
+}
+
+.admin-tab-btn.active {
+  background: #ffffff;
+  color: #b91c1c;
+  border-color: #cbd5e1;
+  box-shadow: 0 -2px 8px rgba(15, 23, 42, 0.06);
+  position: relative;
+  top: 2px;
+  padding-bottom: calc(0.62rem + 2px);
+}
+
+.modal-body {
+  padding: 1.2rem 1.3rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.modal-footer {
+  flex-shrink: 0;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  background: #f8fafc;
+}
+
+/* Admin Tables with Sticky Headers & Horizontal Scroll */
+.admin-table-wrap {
+  width: 100%;
+  max-height: 360px;
+  overflow: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.81rem;
+  color: #0f172a;
+}
+
+.admin-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-weight: 800;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  box-shadow: inset 0 -2px 0 #cbd5e1;
+  white-space: nowrap;
+}
+
+.admin-table tbody td {
+  padding: 0.48rem 0.65rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+/* Responsive Admin Form Grids */
+.admin-grid-3 {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 0.65rem;
+}
+
+.admin-grid-loc-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.admin-grid-loc-coords {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr auto;
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.admin-grid-loc-photo {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.admin-grid-party-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 90px;
+  gap: 0.65rem;
+}
+
+.admin-grid-party-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  align-items: end;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ================= RESPONSIVE BREAKPOINTS ================= */
+
+@media (max-width: 1024px) {
+  .map-top-controls.with-side-panel {
+    max-width: calc(100% - 66px);
+  }
+
+  .admin-grid-party-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .app-header {
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .header-top-row {
+    width: 100%;
+  }
+
+  .header-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .header-collapsible {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding-top: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .header-collapsible.open {
+    display: flex;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .admin-grid-3,
+  .admin-grid-loc-top,
+  .admin-grid-loc-coords,
+  .admin-grid-loc-photo,
+  .admin-grid-street,
+  .admin-grid-party-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-title h1 {
+    font-size: 0.94rem;
+  }
+
+  .brand-title p {
+    font-size: 0.68rem;
+  }
+
+  /* On mobile/small tablets, dock side panels as a bottom sheet so the upper map pins stay clickable! */
+  .map-side-panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 52dvh;
+    border-radius: 16px 16px 0 0;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+  }
+
+  .map-top-controls {
+    top: 8px;
+    left: 50px;
+    right: 8px;
+    max-width: calc(100% - 58px);
+    gap: 6px;
+  }
+
+  .map-search-input {
+    width: 135px;
+    font-size: 0.79rem;
+  }
+
+  .modal-overlay {
+    padding: 0.35rem;
+    align-items: flex-end;
+  }
+
+  .modal-card {
+    max-height: 94dvh;
+    border-radius: 14px 14px 10px 10px;
+  }
+
+  .modal-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .modal-title {
+    font-size: 0.96rem;
+  }
+
+  .admin-tabs {
+    padding: 0.4rem 0.5rem 0;
+    gap: 0.25rem;
+  }
+
+  .admin-tab-btn {
+    padding: 0.52rem 0.7rem;
+    font-size: 0.77rem;
+  }
+
+  .modal-body {
+    padding: 0.9rem;
+  }
+
+  .modal-footer {
+    padding: 0.7rem 0.95rem;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .admin-grid-3,
+  .admin-grid-loc-top,
+  .admin-grid-loc-coords,
+  .admin-grid-loc-photo,
+  .admin-grid-party-main,
+  .admin-grid-party-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-hdr {
+    padding: 0.38rem 0.62rem;
+    font-size: 0.76rem;
+  }
+}
