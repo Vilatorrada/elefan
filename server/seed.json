@@ -5,7 +5,7 @@
     "date": "24 de Maig de 2027",
     "deadline": "2027-05-01T23:59:59Z",
     "status": "OPEN",
-    "totalStreetlampsAvailable": 189,
+    "totalStreetlampsAvailable": 180,
     "totalLocationsAvailable": 11
   },
   "parties": [
@@ -17,14 +17,14 @@
       "seats": 5,
       "votes": 1420,
       "orderRank": 1,
-      "allocatedStreetlampsQuota": 50,
+      "allocatedStreetlampsQuota": 47,
       "allocatedLocationsQuota": 3,
       "username": "ERC",
       "password": "erc",
       "quotaPct": 26.25,
       "effectiveQuotaPct": 26.25,
-      "guaranteedBaseLamps": 47,
-      "flexibleRemainderLamps": 3
+      "guaranteedBaseLamps": 45,
+      "flexibleRemainderLamps": 2
     },
     {
       "id": "JUNTS",
@@ -34,13 +34,13 @@
       "seats": 4,
       "votes": 1180,
       "orderRank": 2,
-      "allocatedStreetlampsQuota": 41,
+      "allocatedStreetlampsQuota": 39,
       "allocatedLocationsQuota": 2,
       "username": "JUNTS",
       "password": "junts",
       "quotaPct": 21.81,
       "effectiveQuotaPct": 21.81,
-      "guaranteedBaseLamps": 38,
+      "guaranteedBaseLamps": 36,
       "flexibleRemainderLamps": 3
     },
     {
@@ -51,13 +51,13 @@
       "seats": 3,
       "votes": 950,
       "orderRank": 3,
-      "allocatedStreetlampsQuota": 33,
+      "allocatedStreetlampsQuota": 31,
       "allocatedLocationsQuota": 2,
       "username": "PSC",
       "password": "psc",
       "quotaPct": 17.56,
       "effectiveQuotaPct": 17.56,
-      "guaranteedBaseLamps": 30,
+      "guaranteedBaseLamps": 28,
       "flexibleRemainderLamps": 3
     },
     {
@@ -68,14 +68,14 @@
       "seats": 2,
       "votes": 680,
       "orderRank": 4,
-      "allocatedStreetlampsQuota": 24,
+      "allocatedStreetlampsQuota": 23,
       "allocatedLocationsQuota": 1,
       "username": "AXSJ",
       "password": "axsj",
       "quotaPct": 12.57,
       "effectiveQuotaPct": 12.57,
       "guaranteedBaseLamps": 21,
-      "flexibleRemainderLamps": 3
+      "flexibleRemainderLamps": 2
     },
     {
       "id": "CXSJ",
@@ -85,13 +85,13 @@
       "seats": 2,
       "votes": 590,
       "orderRank": 5,
-      "allocatedStreetlampsQuota": 21,
+      "allocatedStreetlampsQuota": 20,
       "allocatedLocationsQuota": 1,
       "username": "CXSJ",
       "password": "cxsj",
       "quotaPct": 10.91,
       "effectiveQuotaPct": 10.91,
-      "guaranteedBaseLamps": 17,
+      "guaranteedBaseLamps": 16,
       "flexibleRemainderLamps": 4
     },
     {
@@ -125,8 +125,8 @@
       "password": "pp",
       "quotaPct": 3.88,
       "effectiveQuotaPct": 3.88,
-      "guaranteedBaseLamps": 4,
-      "flexibleRemainderLamps": 3
+      "guaranteedBaseLamps": 3,
+      "flexibleRemainderLamps": 4
     }
   ],
   "admin": {
@@ -142,8 +142,6 @@
       "lampCodes": [
         "AI.01.25",
         "AI.01.26",
-        "AI.01.27",
-        "AI.01.28",
         "AI.01.24",
         "AI.01.23",
         "AI.01.22",
@@ -152,8 +150,6 @@
         "AI.01.19",
         "AI.01.18",
         "AI.01.14",
-        "AI.01.16",
-        "AI.01.17",
         "AI.01.15",
         "AI.01.13",
         "AI.01.12",
@@ -195,13 +191,11 @@
         "AB.01.02",
         "AB.01.01"
       ],
-      "lampCount": 54,
-      "totalLampCount": 54,
+      "lampCount": 50,
+      "totalLampCount": 50,
       "reserved": false,
       "reservedReason": "",
-      "unsuitable": false,
       "manualUnsuitable": false,
-      "unsuitableReason": "",
       "coords": [
         [
           41.74095896014738,
@@ -210,14 +204,6 @@
         [
           41.741093924220024,
           1.804444042832781
-        ],
-        [
-          41.741098805264855,
-          1.804448472504682
-        ],
-        [
-          41.741099283943846,
-          1.804439777544615
         ],
         [
           41.741366271980425,
@@ -250,14 +236,6 @@
         [
           41.74266065488996,
           1.8040717517038
-        ],
-        [
-          41.742689953252295,
-          1.804237502170406
-        ],
-        [
-          41.74269043191236,
-          1.804228806994163
         ],
         [
           41.74269531296537,
@@ -456,40 +434,6 @@
           "lotId": "LOT-01"
         },
         {
-          "id": 617,
-          "codi": "AI.01.27",
-          "carrer": "Avinguda Montserrat",
-          "num": "s/n",
-          "suport": "Bàcul",
-          "lampada": "Led",
-          "potencia": "22",
-          "lat": 41.741098805264855,
-          "lng": 1.804448472504682,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-01"
-        },
-        {
-          "id": 616,
-          "codi": "AI.01.28",
-          "carrer": "Avinguda Montserrat",
-          "num": "s/n",
-          "suport": "Bàcul",
-          "lampada": "Led",
-          "potencia": "22",
-          "lat": 41.741099283943846,
-          "lng": 1.804439777544615,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-01"
-        },
-        {
           "id": 620,
           "codi": "AI.01.24",
           "carrer": "Avinguda Montserrat",
@@ -618,40 +562,6 @@
           "potencia": "22",
           "lat": 41.74266065488996,
           "lng": 1.8040717517038,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-01"
-        },
-        {
-          "id": 628,
-          "codi": "AI.01.16",
-          "carrer": "Avinguda Montserrat",
-          "num": "s/n",
-          "suport": "Bàcul",
-          "lampada": "Led",
-          "potencia": "22",
-          "lat": 41.742689953252295,
-          "lng": 1.804237502170406,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-01"
-        },
-        {
-          "id": 627,
-          "codi": "AI.01.17",
-          "carrer": "Avinguda Montserrat",
-          "num": "s/n",
-          "suport": "Bàcul",
-          "lampada": "Led",
-          "potencia": "22",
-          "lat": 41.74269043191236,
-          "lng": 1.804228806994163,
           "status": "SELECCIONADA",
           "suitable": true,
           "selected": true,
@@ -1341,31 +1251,31 @@
         }
       ],
       "partyQuotas": {
-        "ERC": 14,
-        "JUNTS": 12,
-        "PSC": 9,
-        "AXSJ": 7,
-        "CXSJ": 6,
-        "CUP": 4,
-        "PP": 2
-      },
-      "partyMinQuotas": {
-        "ERC": 14,
+        "ERC": 13,
         "JUNTS": 11,
         "PSC": 9,
         "AXSJ": 6,
         "CXSJ": 5,
-        "CUP": 3,
+        "CUP": 4,
         "PP": 2
       },
+      "partyMinQuotas": {
+        "ERC": 13,
+        "JUNTS": 10,
+        "PSC": 8,
+        "AXSJ": 6,
+        "CXSJ": 5,
+        "CUP": 3,
+        "PP": 1
+      },
       "partyMaxQuotas": {
-        "ERC": 15,
-        "JUNTS": 12,
-        "PSC": 10,
+        "ERC": 14,
+        "JUNTS": 11,
+        "PSC": 9,
         "AXSJ": 7,
         "CXSJ": 6,
         "CUP": 4,
-        "PP": 3
+        "PP": 2
       },
       "remainderSlots": 4
     },
@@ -1384,19 +1294,14 @@
         "AJ.01.71",
         "AJ.01.70",
         "AW.01.48",
-        "AW.01.49",
         "AW.01.46",
-        "AW.01.47",
         "AW.01.16",
         "AW.01.15",
         "AW.01.14",
         "AW.01.13",
         "AW.01.11",
-        "AW.01.12",
         "AW.01.09",
-        "AW.01.10",
         "AW.01.07",
-        "AW.01.08",
         "AW.01.06",
         "AW.01.05",
         "AW.01.04",
@@ -1413,13 +1318,11 @@
         "AC.01.77",
         "AC.01.75"
       ],
-      "lampCount": 38,
-      "totalLampCount": 38,
+      "lampCount": 33,
+      "totalLampCount": 33,
       "reserved": false,
       "reservedReason": "",
-      "unsuitable": false,
       "manualUnsuitable": false,
-      "unsuitableReason": "",
       "coords": [
         [
           41.74131780849007,
@@ -1462,16 +1365,8 @@
           1.804913147210133
         ],
         [
-          41.742860722846515,
-          1.804913013609471
-        ],
-        [
           41.743045512757945,
           1.804953363878091
-        ],
-        [
-          41.743052716845085,
-          1.804953230281025
         ],
         [
           41.74327124063463,
@@ -1494,24 +1389,12 @@
           1.805290558750226
         ],
         [
-          41.74396888683889,
-          1.805290425186559
-        ],
-        [
           41.74414286178662,
           1.805321476708602
         ],
         [
-          41.74415006587335,
-          1.805321343147542
-        ],
-        [
           41.744318018623765,
           1.805353588792498
-        ],
-        [
-          41.744325222710344,
-          1.805353455234207
         ],
         [
           41.74449842801959,
@@ -1746,23 +1629,6 @@
           "lotId": "LOT-02"
         },
         {
-          "id": 311,
-          "codi": "AW.01.49",
-          "carrer": "Carrer Major",
-          "num": "37",
-          "suport": "Columna",
-          "lampada": "Led",
-          "potencia": "60",
-          "lat": 41.742860722846515,
-          "lng": 1.804913013609471,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-02"
-        },
-        {
           "id": 315,
           "codi": "AW.01.46",
           "carrer": "Carrer Major",
@@ -1772,23 +1638,6 @@
           "potencia": "17",
           "lat": 41.743045512757945,
           "lng": 1.804953363878091,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-02"
-        },
-        {
-          "id": 314,
-          "codi": "AW.01.47",
-          "carrer": "Carrer Major",
-          "num": "39",
-          "suport": "Columna",
-          "lampada": "Led",
-          "potencia": "60",
-          "lat": 41.743052716845085,
-          "lng": 1.804953230281025,
           "status": "SELECCIONADA",
           "suitable": true,
           "selected": true,
@@ -1882,23 +1731,6 @@
           "lotId": "LOT-02"
         },
         {
-          "id": 321,
-          "codi": "AW.01.12",
-          "carrer": "Carrer Major",
-          "num": "s/n",
-          "suport": "Columna",
-          "lampada": "Led",
-          "potencia": "30",
-          "lat": 41.74396888683889,
-          "lng": 1.805290425186559,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-02"
-        },
-        {
           "id": 324,
           "codi": "AW.01.09",
           "carrer": "Carrer Major",
@@ -1916,23 +1748,6 @@
           "lotId": "LOT-02"
         },
         {
-          "id": 323,
-          "codi": "AW.01.10",
-          "carrer": "Carrer Major",
-          "num": "s/n",
-          "suport": "Columna",
-          "lampada": "Led",
-          "potencia": "30",
-          "lat": 41.74415006587335,
-          "lng": 1.805321343147542,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-02"
-        },
-        {
           "id": 326,
           "codi": "AW.01.07",
           "carrer": "Carrer Major",
@@ -1942,23 +1757,6 @@
           "potencia": "30",
           "lat": 41.744318018623765,
           "lng": 1.805353588792498,
-          "status": "SELECCIONADA",
-          "suitable": true,
-          "selected": true,
-          "lockedUnsuitable": false,
-          "unsuitableReason": "",
-          "lotId": "LOT-02"
-        },
-        {
-          "id": 325,
-          "codi": "AW.01.08",
-          "carrer": "Carrer Major",
-          "num": "s/n",
-          "suport": "Columna",
-          "lampada": "Led",
-          "potencia": "30",
-          "lat": 41.744325222710344,
-          "lng": 1.805353455234207,
           "status": "SELECCIONADA",
           "suitable": true,
           "selected": true,
@@ -2223,33 +2021,33 @@
         }
       ],
       "partyQuotas": {
-        "ERC": 10,
-        "JUNTS": 8,
-        "PSC": 7,
-        "AXSJ": 5,
-        "CXSJ": 4,
-        "CUP": 2,
-        "PP": 2
-      },
-      "partyMinQuotas": {
         "ERC": 9,
-        "JUNTS": 8,
+        "JUNTS": 7,
         "PSC": 6,
         "AXSJ": 4,
         "CXSJ": 4,
         "CUP": 2,
         "PP": 1
       },
+      "partyMinQuotas": {
+        "ERC": 8,
+        "JUNTS": 7,
+        "PSC": 5,
+        "AXSJ": 4,
+        "CXSJ": 3,
+        "CUP": 2,
+        "PP": 1
+      },
       "partyMaxQuotas": {
-        "ERC": 10,
-        "JUNTS": 9,
-        "PSC": 7,
+        "ERC": 9,
+        "JUNTS": 8,
+        "PSC": 6,
         "AXSJ": 5,
-        "CXSJ": 5,
+        "CXSJ": 4,
         "CUP": 3,
         "PP": 2
       },
-      "remainderSlots": 4
+      "remainderSlots": 3
     },
     {
       "id": "LOT-03",
@@ -2278,9 +2076,7 @@
       "totalLampCount": 17,
       "reserved": false,
       "reservedReason": "",
-      "unsuitable": false,
       "manualUnsuitable": false,
-      "unsuitableReason": "",
       "coords": [
         [
           41.742772292535335,
@@ -2645,11 +2441,11 @@
       "partyQuotas": {
         "ERC": 4,
         "JUNTS": 4,
-        "PSC": 3,
-        "AXSJ": 2,
+        "PSC": 2,
+        "AXSJ": 3,
         "CXSJ": 2,
-        "CUP": 2,
-        "PP": 0
+        "CUP": 1,
+        "PP": 1
       },
       "partyMinQuotas": {
         "ERC": 4,
@@ -2704,9 +2500,7 @@
       "totalLampCount": 23,
       "reserved": false,
       "reservedReason": "",
-      "unsuitable": false,
       "manualUnsuitable": false,
-      "unsuitableReason": "",
       "coords": [
         [
           41.73921019423076,
@@ -3195,12 +2989,12 @@
         }
       ],
       "partyQuotas": {
-        "ERC": 7,
+        "ERC": 6,
         "JUNTS": 5,
-        "PSC": 4,
-        "AXSJ": 3,
+        "PSC": 5,
+        "AXSJ": 2,
         "CXSJ": 2,
-        "CUP": 1,
+        "CUP": 2,
         "PP": 1
       },
       "partyMinQuotas": {
@@ -3258,9 +3052,7 @@
       "totalLampCount": 25,
       "reserved": false,
       "reservedReason": "",
-      "unsuitable": false,
       "manualUnsuitable": false,
-      "unsuitableReason": "",
       "coords": [
         [
           41.7366797322131,
@@ -3791,12 +3583,12 @@
         }
       ],
       "partyQuotas": {
-        "ERC": 6,
+        "ERC": 7,
         "JUNTS": 5,
-        "PSC": 5,
-        "AXSJ": 3,
+        "PSC": 4,
+        "AXSJ": 4,
         "CXSJ": 3,
-        "CUP": 2,
+        "CUP": 1,
         "PP": 1
       },
       "partyMinQuotas": {
@@ -3861,9 +3653,7 @@
       "totalLampCount": 32,
       "reserved": false,
       "reservedReason": "",
-      "unsuitable": false,
       "manualUnsuitable": false,
-      "unsuitableReason": "",
       "coords": [
         [
           41.73597232055123,
@@ -4541,12 +4331,12 @@
         }
       ],
       "partyQuotas": {
-        "ERC": 9,
+        "ERC": 8,
         "JUNTS": 7,
         "PSC": 5,
         "AXSJ": 4,
         "CXSJ": 4,
-        "CUP": 2,
+        "CUP": 3,
         "PP": 1
       },
       "partyMinQuotas": {
@@ -4783,12 +4573,12 @@
       "potencia": "22",
       "lat": 41.741098805264855,
       "lng": 1.804448472504682,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-01"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.26)",
+      "lotId": null
     },
     {
       "id": 616,
@@ -4800,12 +4590,12 @@
       "potencia": "22",
       "lat": 41.741099283943846,
       "lng": 1.804439777544615,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-01"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.26)",
+      "lotId": null
     },
     {
       "id": 620,
@@ -4953,12 +4743,12 @@
       "potencia": "22",
       "lat": 41.742689953252295,
       "lng": 1.804237502170406,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-01"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.15)",
+      "lotId": null
     },
     {
       "id": 627,
@@ -4970,12 +4760,12 @@
       "potencia": "22",
       "lat": 41.74269043191236,
       "lng": 1.804228806994163,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-01"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.15)",
+      "lotId": null
     },
     {
       "id": 629,
@@ -6636,11 +6426,11 @@
       "potencia": "70",
       "lat": 41.742126468623226,
       "lng": 1.801862842708409,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.127)",
       "lotId": null
     },
     {
@@ -6670,11 +6460,11 @@
       "potencia": "70",
       "lat": 41.74213147263061,
       "lng": 1.801855972634295,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.127)",
       "lotId": null
     },
     {
@@ -6687,11 +6477,11 @@
       "potencia": "70",
       "lat": 41.74213154947488,
       "lng": 1.801863341159408,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.127)",
       "lotId": null
     },
     {
@@ -7486,11 +7276,11 @@
       "potencia": "20",
       "lat": 41.74757670524536,
       "lng": 1.806785035481658,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.71)",
       "lotId": null
     },
     {
@@ -7520,11 +7310,11 @@
       "potencia": "20",
       "lat": 41.74774911980617,
       "lng": 1.806709200815058,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.69)",
       "lotId": null
     },
     {
@@ -7554,11 +7344,11 @@
       "potencia": "20",
       "lat": 41.747918087224505,
       "lng": 1.806639683630405,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.67)",
       "lotId": null
     },
     {
@@ -7588,11 +7378,11 @@
       "potencia": "20",
       "lat": 41.748133525247496,
       "lng": 1.806543687988353,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.65)",
       "lotId": null
     },
     {
@@ -7622,11 +7412,11 @@
       "potencia": "20",
       "lat": 41.748287755359485,
       "lng": 1.806477449571898,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.63)",
       "lotId": null
     },
     {
@@ -7656,11 +7446,11 @@
       "potencia": "20",
       "lat": 41.74843578812429,
       "lng": 1.806412889110097,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.61)",
       "lotId": null
     },
     {
@@ -7979,11 +7769,11 @@
       "potencia": "60",
       "lat": 41.736307021973815,
       "lng": 1.801060904445238,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AN.01.64)",
       "lotId": null
     },
     {
@@ -8557,11 +8347,11 @@
       "potencia": "20",
       "lat": 41.73992106006308,
       "lng": 1.804193017537033,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.33)",
       "lotId": null
     },
     {
@@ -8608,11 +8398,11 @@
       "potencia": "20",
       "lat": 41.74008893030694,
       "lng": 1.804111457076346,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.37)",
       "lotId": null
     },
     {
@@ -8642,11 +8432,11 @@
       "potencia": "20",
       "lat": 41.74020769855074,
       "lng": 1.804053569750921,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.40)",
       "lotId": null
     },
     {
@@ -8676,11 +8466,11 @@
       "potencia": "20",
       "lat": 41.74034586161196,
       "lng": 1.803980222336211,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.43)",
       "lotId": null
     },
     {
@@ -12025,11 +11815,11 @@
       "potencia": "70",
       "lat": 41.75128925777225,
       "lng": 1.807886581231684,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AS.01.25)",
       "lotId": null
     },
     {
@@ -12042,11 +11832,11 @@
       "potencia": "70",
       "lat": 41.75129051008267,
       "lng": 1.807879064496825,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AS.01.25)",
       "lotId": null
     },
     {
@@ -13164,11 +12954,11 @@
       "potencia": "70",
       "lat": 41.739843415911494,
       "lng": 1.801736940124104,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.59)",
       "lotId": null
     },
     {
@@ -13198,11 +12988,11 @@
       "potencia": "70",
       "lat": 41.739873155719806,
       "lng": 1.802066970823475,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.61)",
       "lotId": null
     },
     {
@@ -13232,11 +13022,11 @@
       "potencia": "70",
       "lat": 41.7399015726259,
       "lng": 1.802399792286687,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.63)",
       "lotId": null
     },
     {
@@ -15255,11 +15045,11 @@
       "potencia": "60",
       "lat": 41.74520103725458,
       "lng": 1.80698371696608,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.05)",
       "lotId": null
     },
     {
@@ -15289,11 +15079,11 @@
       "potencia": "60",
       "lat": 41.745244377069746,
       "lng": 1.806790821002826,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.04)",
       "lotId": null
     },
     {
@@ -15765,11 +15555,11 @@
       "potencia": "60",
       "lat": 41.74460995417514,
       "lng": 1.806787707800356,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.10)",
       "lotId": null
     },
     {
@@ -15799,11 +15589,11 @@
       "potencia": "60",
       "lat": 41.74470036228767,
       "lng": 1.806602197871252,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.09)",
       "lotId": null
     },
     {
@@ -16632,12 +16422,12 @@
       "potencia": "60",
       "lat": 41.742860722846515,
       "lng": 1.804913013609471,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-02"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.48)",
+      "lotId": null
     },
     {
       "id": 313,
@@ -16683,12 +16473,12 @@
       "potencia": "60",
       "lat": 41.743052716845085,
       "lng": 1.804953230281025,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-02"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.46)",
+      "lotId": null
     },
     {
       "id": 316,
@@ -16802,12 +16592,12 @@
       "potencia": "30",
       "lat": 41.74396888683889,
       "lng": 1.805290425186559,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-02"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.11)",
+      "lotId": null
     },
     {
       "id": 324,
@@ -16836,12 +16626,12 @@
       "potencia": "30",
       "lat": 41.74415006587335,
       "lng": 1.805321343147542,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-02"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.09)",
+      "lotId": null
     },
     {
       "id": 326,
@@ -16870,12 +16660,12 @@
       "potencia": "30",
       "lat": 41.744325222710344,
       "lng": 1.805353455234207,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
-      "lotId": "LOT-02"
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.07)",
+      "lotId": null
     },
     {
       "id": 327,
@@ -23058,11 +22848,11 @@
       "potencia": "20",
       "lat": 41.74738588621183,
       "lng": 1.805635058741231,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.84)",
       "lotId": null
     },
     {
@@ -23092,11 +22882,11 @@
       "potencia": "20",
       "lat": 41.74756645300141,
       "lng": 1.805558462335538,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.82)",
       "lotId": null
     },
     {
@@ -23126,11 +22916,11 @@
       "potencia": "20",
       "lat": 41.74786120207746,
       "lng": 1.805429369311553,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.79)",
       "lotId": null
     },
     {
@@ -23160,11 +22950,11 @@
       "potencia": "20",
       "lat": 41.7480007331138,
       "lng": 1.805370136097575,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.77)",
       "lotId": null
     },
     {
@@ -23194,11 +22984,11 @@
       "potencia": "20",
       "lat": 41.748179714158354,
       "lng": 1.805293574071415,
-      "status": "SELECCIONADA",
-      "suitable": true,
-      "selected": true,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "status": "NO_APTA",
+      "suitable": false,
+      "selected": false,
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.75)",
       "lotId": null
     },
     {
@@ -25421,11 +25211,11 @@
       "potencia": "11",
       "lat": 41.74955213605102,
       "lng": 1.807330613651459,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.03.49/1)",
       "lotId": null
     },
     {
@@ -25659,11 +25449,11 @@
       "potencia": "73",
       "lat": 41.73926015451709,
       "lng": 1.804478840070373,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AO.01.11)",
       "lotId": null
     },
     {
@@ -25676,11 +25466,11 @@
       "potencia": "73",
       "lat": 41.73926058716876,
       "lng": 1.804470981492091,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AO.01.11)",
       "lotId": null
     },
     {
@@ -25897,11 +25687,11 @@
       "potencia": "50",
       "lat": 41.74338549810192,
       "lng": 1.803107167560715,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.43)",
       "lotId": null
     },
     {
@@ -26169,11 +25959,11 @@
       "potencia": "70",
       "lat": 41.7442248246067,
       "lng": 1.806545837754804,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.33)",
       "lotId": null
     },
     {
@@ -26186,11 +25976,11 @@
       "potencia": "70",
       "lat": 41.74422563721751,
       "lng": 1.806549848101031,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.33)",
       "lotId": null
     },
     {
@@ -26203,11 +25993,11 @@
       "potencia": "70",
       "lat": 41.744228314466376,
       "lng": 1.806541895799506,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.33)",
       "lotId": null
     },
     {
@@ -26237,11 +26027,11 @@
       "potencia": "70",
       "lat": 41.74423094213775,
       "lng": 1.80655005800134,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.33)",
       "lotId": null
     },
     {
@@ -26254,11 +26044,11 @@
       "potencia": "70",
       "lat": 41.744231550266825,
       "lng": 1.806544469437863,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.33)",
       "lotId": null
     },
     {
@@ -26441,11 +26231,11 @@
       "potencia": "100",
       "lat": 41.73674931652601,
       "lng": 1.802353353260058,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.01)",
       "lotId": null
     },
     {
@@ -26458,11 +26248,11 @@
       "potencia": "70",
       "lat": 41.73694981173444,
       "lng": 1.802650756067229,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.03)",
       "lotId": null
     },
     {
@@ -26492,11 +26282,11 @@
       "potencia": "100",
       "lat": 41.7369519922734,
       "lng": 1.802652638881899,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.03)",
       "lotId": null
     },
     {
@@ -26509,11 +26299,11 @@
       "potencia": "100",
       "lat": 41.736953507962646,
       "lng": 1.802643233298859,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.03)",
       "lotId": null
     },
     {
@@ -26526,11 +26316,11 @@
       "potencia": "100",
       "lat": 41.736954895185846,
       "lng": 1.802651811178189,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.03)",
       "lotId": null
     },
     {
@@ -26543,11 +26333,11 @@
       "potencia": "70",
       "lat": 41.73695588907355,
       "lng": 1.802645670829716,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.03)",
       "lotId": null
     },
     {
@@ -26560,11 +26350,11 @@
       "potencia": "70",
       "lat": 41.73708674004253,
       "lng": 1.803296062126566,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.07)",
       "lotId": null
     },
     {
@@ -26577,11 +26367,11 @@
       "potencia": "70",
       "lat": 41.73708717261684,
       "lng": 1.8032882038076,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AT.01.07)",
       "lotId": null
     },
     {
@@ -26798,11 +26588,11 @@
       "potencia": "70",
       "lat": 41.74221313519286,
       "lng": 1.802351928684385,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.62)",
       "lotId": null
     },
     {
@@ -26815,11 +26605,11 @@
       "potencia": "70",
       "lat": 41.74221555237543,
       "lng": 1.802356404061709,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.62)",
       "lotId": null
     },
     {
@@ -26832,11 +26622,11 @@
       "potencia": "70",
       "lat": 41.742217313346906,
       "lng": 1.802347113714273,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.62)",
       "lotId": null
     },
     {
@@ -27070,11 +26860,11 @@
       "potencia": "25",
       "lat": 41.73878986215437,
       "lng": 1.806434299487444,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.13)",
       "lotId": null
     },
     {
@@ -27104,11 +26894,11 @@
       "potencia": "30",
       "lat": 41.73895903790624,
       "lng": 1.806351712201627,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.15)",
       "lotId": null
     },
     {
@@ -27121,11 +26911,11 @@
       "potencia": "15",
       "lat": 41.73910717279786,
       "lng": 1.806522889252392,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.17)",
       "lotId": null
     },
     {
@@ -27172,11 +26962,11 @@
       "potencia": "15",
       "lat": 41.73928753233402,
       "lng": 1.80643225433629,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.19)",
       "lotId": null
     },
     {
@@ -27206,11 +26996,11 @@
       "potencia": "25",
       "lat": 41.73943796911625,
       "lng": 1.80658267792291,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.21)",
       "lotId": null
     },
     {
@@ -27240,11 +27030,11 @@
       "potencia": "15",
       "lat": 41.73961271902633,
       "lng": 1.80650588626497,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.23)",
       "lotId": null
     },
     {
@@ -27274,11 +27064,11 @@
       "potencia": "25",
       "lat": 41.73976115020795,
       "lng": 1.806660537840338,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.25)",
       "lotId": null
     },
     {
@@ -27291,11 +27081,11 @@
       "potencia": "25",
       "lat": 41.739936388739125,
       "lng": 1.806600853947661,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.27)",
       "lotId": null
     },
     {
@@ -27342,11 +27132,11 @@
       "potencia": "15",
       "lat": 41.74008649632432,
       "lng": 1.806739885313703,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.29)",
       "lotId": null
     },
     {
@@ -27376,11 +27166,11 @@
       "potencia": "15",
       "lat": 41.74025745862153,
       "lng": 1.806645227892458,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.31)",
       "lotId": null
     },
     {
@@ -27410,11 +27200,11 @@
       "potencia": "25",
       "lat": 41.74040848626284,
       "lng": 1.80681905173176,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AP.01.33)",
       "lotId": null
     },
     {
@@ -27427,11 +27217,11 @@
       "potencia": "15",
       "lat": 41.74058498008105,
       "lng": 1.806753989063035,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.23)",
       "lotId": null
     },
     {
@@ -27478,11 +27268,11 @@
       "potencia": "15",
       "lat": 41.74073440351592,
       "lng": 1.806893002419955,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.25)",
       "lotId": null
     },
     {
@@ -27512,11 +27302,11 @@
       "potencia": "25",
       "lat": 41.740913697012886,
       "lng": 1.806819505212975,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.35)",
       "lotId": null
     },
     {
@@ -27546,11 +27336,11 @@
       "potencia": "25",
       "lat": 41.74106146947372,
       "lng": 1.806973848875257,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.37)",
       "lotId": null
     },
     {
@@ -27580,11 +27370,11 @@
       "potencia": "15",
       "lat": 41.74125032883525,
       "lng": 1.806899453549276,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.21)",
       "lotId": null
     },
     {
@@ -27614,11 +27404,11 @@
       "potencia": "25",
       "lat": 41.74139564759131,
       "lng": 1.807047029771087,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.19)",
       "lotId": null
     },
     {
@@ -27648,11 +27438,11 @@
       "potencia": "25",
       "lat": 41.74157019789454,
       "lng": 1.80697610007357,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.15)",
       "lotId": null
     },
     {
@@ -27682,11 +27472,11 @@
       "potencia": "25",
       "lat": 41.74171577086625,
       "lng": 1.80712471088079,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.13)",
       "lotId": null
     },
     {
@@ -27699,11 +27489,11 @@
       "potencia": "25",
       "lat": 41.7418977075136,
       "lng": 1.807068804355172,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.11)",
       "lotId": null
     },
     {
@@ -27750,11 +27540,11 @@
       "potencia": "25",
       "lat": 41.742042239489315,
       "lng": 1.807202228333987,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.09)",
       "lotId": null
     },
     {
@@ -27767,11 +27557,11 @@
       "potencia": "15",
       "lat": 41.74222383625274,
       "lng": 1.807146819777944,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.07)",
       "lotId": null
     },
     {
@@ -27801,11 +27591,11 @@
       "potencia": "25",
       "lat": 41.74247927780403,
       "lng": 1.807207965563557,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.05)",
       "lotId": null
     },
     {
@@ -27852,11 +27642,11 @@
       "potencia": "15",
       "lat": 41.74262894236723,
       "lng": 1.807346821861498,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.03)",
       "lotId": null
     },
     {
@@ -27869,11 +27659,11 @@
       "potencia": "25",
       "lat": 41.74279992043459,
       "lng": 1.807284075541217,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.01)",
       "lotId": null
     },
     {
@@ -28243,11 +28033,11 @@
       "potencia": "70",
       "lat": 41.743727456667074,
       "lng": 1.806804153739331,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AF.01.078)",
       "lotId": null
     },
     {
@@ -28260,11 +28050,11 @@
       "potencia": "70",
       "lat": 41.74372811261178,
       "lng": 1.806811613813146,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AF.01.078)",
       "lotId": null
     },
     {
@@ -28294,11 +28084,11 @@
       "potencia": "70",
       "lat": 41.74373051835465,
       "lng": 1.806812249208019,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AF.01.078)",
       "lotId": null
     },
     {
@@ -28311,11 +28101,11 @@
       "potencia": "70",
       "lat": 41.7437308662761,
       "lng": 1.806802836220068,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AF.01.078)",
       "lotId": null
     },
     {
@@ -28345,11 +28135,11 @@
       "potencia": "150",
       "lat": 41.742800961043315,
       "lng": 1.804709316318587,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.181)",
       "lotId": null
     },
     {
@@ -28379,11 +28169,11 @@
       "potencia": "150",
       "lat": 41.74280816513011,
       "lng": 1.804709182695389,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.01.181)",
       "lotId": null
     },
     {
@@ -28413,11 +28203,11 @@
       "potencia": "30",
       "lat": 41.74537376341356,
       "lng": 1.804824705683063,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.33)",
       "lotId": null
     },
     {
@@ -28481,11 +28271,11 @@
       "potencia": "30",
       "lat": 41.74549647227701,
       "lng": 1.805049968311502,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.38)",
       "lotId": null
     },
     {
@@ -28498,11 +28288,11 @@
       "potencia": "30",
       "lat": 41.745534644373066,
       "lng": 1.804667174358068,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.29)",
       "lotId": null
     },
     {
@@ -28566,11 +28356,11 @@
       "potencia": "30",
       "lat": 41.74566000610493,
       "lng": 1.804882412434074,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AW.01.27)",
       "lotId": null
     },
     {
@@ -29127,11 +28917,11 @@
       "potencia": "70",
       "lat": 41.744282861376085,
       "lng": 1.805723373911867,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.37)",
       "lotId": null
     },
     {
@@ -29144,11 +28934,11 @@
       "potencia": "70",
       "lat": 41.744282947972955,
       "lng": 1.80573170443632,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.37)",
       "lotId": null
     },
     {
@@ -29178,11 +28968,11 @@
       "potencia": "70",
       "lat": 41.74428728342888,
       "lng": 1.805730858338498,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.37)",
       "lotId": null
     },
     {
@@ -29195,11 +28985,11 @@
       "potencia": "70",
       "lat": 41.744287432884825,
       "lng": 1.805724363084161,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AE.01.37)",
       "lotId": null
     },
     {
@@ -29229,11 +29019,11 @@
       "potencia": "50",
       "lat": 41.74409758256982,
       "lng": 1.801804671781731,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AH.01.02)",
       "lotId": null
     },
     {
@@ -29246,11 +29036,11 @@
       "potencia": "50",
       "lat": 41.74409806104289,
       "lng": 1.801795976401528,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AH.01.02)",
       "lotId": null
     },
     {
@@ -29280,11 +29070,11 @@
       "potencia": "70",
       "lat": 41.736327376064224,
       "lng": 1.804404507124052,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AQ.01.13)",
       "lotId": null
     },
     {
@@ -29297,11 +29087,11 @@
       "potencia": "70",
       "lat": 41.7363320067667,
       "lng": 1.804404421230327,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AQ.01.13)",
       "lotId": null
     },
     {
@@ -29314,11 +29104,11 @@
       "potencia": "70",
       "lat": 41.73633208343893,
       "lng": 1.804411789099381,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AQ.01.13)",
       "lotId": null
     },
     {
@@ -29365,11 +29155,11 @@
       "potencia": "150",
       "lat": 41.74670402734022,
       "lng": 1.806842630587017,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.48)",
       "lotId": null
     },
     {
@@ -29382,11 +29172,11 @@
       "potencia": "150",
       "lat": 41.7467057886663,
       "lng": 1.806833339703654,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.48)",
       "lotId": null
     },
     {
@@ -29399,11 +29189,11 @@
       "potencia": "150",
       "lat": 41.74670876836653,
       "lng": 1.806838857554674,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AC.01.48)",
       "lotId": null
     },
     {
@@ -29467,11 +29257,11 @@
       "potencia": "10",
       "lat": 41.74221411354331,
       "lng": 1.807833152981638,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.31)",
       "lotId": null
     },
     {
@@ -29501,11 +29291,11 @@
       "potencia": "10",
       "lat": 41.74225275426606,
       "lng": 1.807571014220708,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.29)",
       "lotId": null
     },
     {
@@ -29535,11 +29325,11 @@
       "potencia": "10",
       "lat": 41.74229097217388,
       "lng": 1.807319843244534,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AG.01.27)",
       "lotId": null
     },
     {
@@ -29552,11 +29342,11 @@
       "potencia": "15",
       "lat": 41.741664221178326,
       "lng": 1.802676304021839,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.03.69/1)",
       "lotId": null
     },
     {
@@ -29603,11 +29393,11 @@
       "potencia": "15",
       "lat": 41.74171717131934,
       "lng": 1.802341630435257,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.03.68/1)",
       "lotId": null
     },
     {
@@ -29637,11 +29427,11 @@
       "potencia": "15",
       "lat": 41.7417759438845,
       "lng": 1.80259334712999,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.03.66/1)",
       "lotId": null
     },
     {
@@ -29654,11 +29444,11 @@
       "potencia": "15",
       "lat": 41.74177696673167,
       "lng": 1.802278642863206,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AI.03.67/1)",
       "lotId": null
     },
     {
@@ -29756,11 +29546,11 @@
       "potencia": "3",
       "lat": 41.74075162991554,
       "lng": 1.804399320095235,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29773,11 +29563,11 @@
       "potencia": "3",
       "lat": 41.74075587041846,
       "lng": 1.804382432710877,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29790,11 +29580,11 @@
       "potencia": "3",
       "lat": 41.74075740513661,
       "lng": 1.804415315961642,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29807,11 +29597,11 @@
       "potencia": "3",
       "lat": 41.740767955996034,
       "lng": 1.804374760638865,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29824,11 +29614,11 @@
       "potencia": "3",
       "lat": 41.74077002819887,
       "lng": 1.804421094897503,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29841,11 +29631,11 @@
       "potencia": "3",
       "lat": 41.74078050062995,
       "lng": 1.804380558519609,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29858,11 +29648,11 @@
       "potencia": "3",
       "lat": 41.740781999560475,
       "lng": 1.804413360794435,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AL.01.112)",
       "lotId": null
     },
     {
@@ -29960,11 +29750,11 @@
       "potencia": "70",
       "lat": 41.74956181711374,
       "lng": 1.80508829742258,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AA.01.15)",
       "lotId": null
     },
     {
@@ -30011,11 +29801,11 @@
       "potencia": "70",
       "lat": 41.74965636882948,
       "lng": 1.805023289270141,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AA.01.13)",
       "lotId": null
     },
     {
@@ -30470,11 +30260,11 @@
       "potencia": "85",
       "lat": 41.75015615463521,
       "lng": 1.804720060296341,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AA.04.25/1)",
       "lotId": null
     },
     {
@@ -30487,11 +30277,11 @@
       "potencia": "85",
       "lat": 41.750158370768105,
       "lng": 1.804724855149576,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AA.04.25/1)",
       "lotId": null
     },
     {
@@ -30504,11 +30294,11 @@
       "potencia": "85",
       "lat": 41.75015855627452,
       "lng": 1.804715665575171,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AA.04.25/1)",
       "lotId": null
     },
     {
@@ -30538,11 +30328,11 @@
       "potencia": "85",
       "lat": 41.75016244453116,
       "lng": 1.80471747041085,
-      "status": "APTA",
-      "suitable": true,
+      "status": "NO_APTA",
+      "suitable": false,
       "selected": false,
-      "lockedUnsuitable": false,
-      "unsuitableReason": "",
+      "lockedUnsuitable": true,
+      "unsuitableReason": "Lluminària secundària al mateix suport (AA.04.25/1)",
       "lotId": null
     },
     {

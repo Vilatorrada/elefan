@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getDb, saveDb, closeDb, isAptSupport } from './db.js';
+import { getDb, saveDb, closeDb, isAptSupport, applyPhysicalPoleDeduplication } from './db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -96,8 +96,12 @@ delete db.lotCategoryModes;
 db.locationPreferences = {};
 db.allocationResults = null;
 
+applyPhysicalPoleDeduplication(db);
+const finalApt = db.lamps.filter(l => l.status === 'APTA').length;
+const finalNoApt = db.lamps.filter(l => l.status === 'NO_APTA').length;
+
 saveDb(db);
 closeDb();
 console.log(
-  `Base de dades SQLite (eleccions.sqlite) reinicialitzada! (${db.lamps.length} totals | ${aptCount} Aptes | ${nonAptCount} No Aptes | ${db.lots.length} lots inicials)`
+  `Base de dades SQLite (eleccions.sqlite) reinicialitzada! (${db.lamps.length} totals | ${finalApt} suports físics Aptes | ${finalNoApt} No Aptes | ${db.lots.length} lots inicials)`
 );

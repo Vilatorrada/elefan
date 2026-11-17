@@ -31,9 +31,9 @@
 
 Aquesta aplicació web facilita i automatitza la configuració municipal i l'adjudicació dels espais públics cedits per l'**Ajuntament de Sant Joan de Vilatorrada** per a la propaganda electoral:
 
-- **Inventari de faroles (3 estats) i Lots de fanals**: A partir del parc municipal d'enllumenat públic (`1.540` punts de llum geolocalitzats), el sistema distingeix automàticament **3 estats**:
-  1. **`🔒 No Apta` (no seleccionable — 434 punts)**: Suports ancorats a façana o paret (*Braç a façana*, *A paret*, *Braç a pal de fusta*, *Focus a façana*), bloquejats permanentment perquè no s'hi puguin penjar banderoles.
-  2. **`⚪ Apta` (disponible — 1.106 punts)**: Totes les faroles de **`Columna` (970)** i **`Bàcul` (136)**, que són estructuralment vàlides i seleccionables.
+- **Inventari de faroles (3 estats, deduplicat a 1 suport físic = 1 fanal) i Lots de fanals**: A partir del parc municipal d'enllumenat públic (`1.540` punts de llum geolocalitzats), el sistema distingeix automàticament **3 estats**:
+  1. **`🔒 No Apta` (no seleccionable — 558 punts per defecte)**: Inclou els `434` suports ancorats a façana o paret (*Braç a façana*, *A paret*, *Braç a pal de fusta*, *Focus a façana*) més les **`124` lluminàries secundàries** de columnes amb doble o triple braç (`< 1,8 m` sobre el mateix suport), evitant que s'assignin dos partits diferents al mateix pal físic.
+  2. **`⚪ Apta` (disponible — 982 suports físics únics)**: Els **`982` suports físics únics** de **`Columna`** i **`Bàcul`**, estructuralment vàlids i seleccionables.
   3. **`✔ Seleccionada`**: Faroles aptes (*Columna* o *Bàcul*) escollides per la comissió municipal per formar part activa dels lots i del repartiment electoral.
 - **Emplaçaments fixos**: Panells, cartelleres i suports de pancartes municipals, cadascun amb una ubicació al mapa i una capacitat màxima de candidatures.
 

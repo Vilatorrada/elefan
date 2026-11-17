@@ -13,6 +13,7 @@ import {
   sanitizeDbForClient,
   recalculateLotsAndQuotas,
   isAptSupport,
+  findSecondaryPoleMap,
   cleanupDeletedLotReferences,
   savePartyLotLampPref,
   savePartyLotOrderPref,
@@ -786,9 +787,12 @@ app.post('/api/admin/lamp/aptitude', requireAdmin, (req, res) => {
   let modifiedCount = 0;
 
   if (resetDefault) {
+    const secondaryMap = findSecondaryPoleMap(db.lamps, null, 1.8);
     db.lamps.forEach(lamp => {
       const defaultApt = isAptSupport(lamp.suport);
-      if (defaultApt) {
+      const primaryPoleCodi = secondaryMap.get(String(lamp.codi));
+
+      if (defaultApt && !primaryPoleCodi) {
         if (lamp.status === 'NO_APTA') {
           lamp.status = 'APTA';
           lamp.suitable = true;
@@ -809,7 +813,9 @@ app.post('/api/admin/lamp/aptitude', requireAdmin, (req, res) => {
         lamp.suitable = false;
         lamp.selected = false;
         lamp.lockedUnsuitable = true;
-        lamp.unsuitableReason = `Suport no apte per defecte (${lamp.suport || 'altres'})`;
+        lamp.unsuitableReason = primaryPoleCodi
+          ? `Lluminària secundària al mateix suport (${primaryPoleCodi})`
+          : `Suport no apte per defecte (${lamp.suport || 'altres'})`;
       }
     });
   } else {

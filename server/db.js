@@ -305,6 +305,91 @@ export function isAptSupport(suport) {
   return norm === 'columna' || norm === 'bacul';
 }
 
+/**
+ * Identifies secondary luminaires mounted on the exact same physical `Columna`/`Bàcul` support (`< 1.8 m` apart),
+ * ensuring 1 physical pole = 1 electoral streetlamp (`codi` -> primary `codi` on that pole).
+ */
+export function findSecondaryPoleMap(lamps = [], lotMembershipCodes = null, maxDistMeters = 1.8) {
+  const candidates = (lamps || []).filter(
+    l => isAptSupport(l.suport) && typeof l.lat === 'number' && typeof l.lng === 'number'
+  );
+  const visited = new Uint8Array(candidates.length);
+  const secondaryToPrimary = new Map();
+
+  for (let i = 0; i < candidates.length; i++) {
+    if (visited[i]) continue;
+    visited[i] = 1;
+    const cluster = [candidates[i]];
+
+    for (let h = 0; h < cluster.length; h++) {
+      const ref = cluster[h];
+      for (let j = i + 1; j < candidates.length; j++) {
+        if (visited[j]) continue;
+        const cand = candidates[j];
+        const dMeters = Math.hypot((ref.lat - cand.lat) * 111320, (ref.lng - cand.lng) * 83000);
+        if (dMeters < maxDistMeters) {
+          visited[j] = 1;
+          cluster.push(cand);
+        }
+      }
+    }
+
+    if (cluster.length > 1) {
+      cluster.sort((a, b) => {
+        const inLotA = lotMembershipCodes
+          ? (lotMembershipCodes.has(String(a.codi)) ? 1 : 0)
+          : (a.lotId ? 1 : 0);
+        const inLotB = lotMembershipCodes
+          ? (lotMembershipCodes.has(String(b.codi)) ? 1 : 0)
+          : (b.lotId ? 1 : 0);
+        if (inLotB !== inLotA) return inLotB - inLotA;
+
+        const selA = (a.status === 'SELECCIONADA' || a.selected) ? 1 : 0;
+        const selB = (b.status === 'SELECCIONADA' || b.selected) ? 1 : 0;
+        if (selB !== selA) return selB - selA;
+
+        return String(a.codi || '').localeCompare(String(b.codi || ''), 'ca', { numeric: true });
+      });
+
+      const primaryCodi = String(cluster[0].codi);
+      for (let k = 1; k < cluster.length; k++) {
+        secondaryToPrimary.set(String(cluster[k].codi), primaryCodi);
+      }
+    }
+  }
+
+  return secondaryToPrimary;
+}
+
+export function applyPhysicalPoleDeduplication(db) {
+  if (!db || !Array.isArray(db.lamps)) return 0;
+  const lotCodesSet = new Set();
+  (db.lots || []).forEach(lot => {
+    const codes = Array.isArray(lot.lampCodes)
+      ? lot.lampCodes
+      : (lot.lamps || []).map(l => l.codi);
+    codes.forEach(c => lotCodesSet.add(String(c)));
+  });
+
+  const secondaryMap = findSecondaryPoleMap(db.lamps, lotCodesSet, 1.8);
+  let dedupedCount = 0;
+
+  db.lamps.forEach(lamp => {
+    const primaryCodi = secondaryMap.get(String(lamp.codi));
+    if (primaryCodi) {
+      lamp.status = 'NO_APTA';
+      lamp.suitable = false;
+      lamp.selected = false;
+      lamp.lockedUnsuitable = true;
+      lamp.unsuitableReason = `Lluminària secundària al mateix suport (${primaryCodi})`;
+      dedupedCount += 1;
+    }
+  });
+
+  recalculateLotsAndQuotas(db);
+  return dedupedCount;
+}
+
 export function cleanupDeletedLotReferences(db, deletedLotIds) {
   if (!db || !Array.isArray(deletedLotIds) || deletedLotIds.length === 0) return;
   const deletedSet = new Set(deletedLotIds);
@@ -934,7 +1019,9 @@ function buildInitialSeedData() {
     try {
       const seedRaw = fs.readFileSync(SEED_FILE, 'utf-8');
       console.log(`[SQLite] Inicialitzant base de dades des de la llavor inicial ${SEED_FILE}...`);
-      return recalculateLotsAndQuotas(JSON.parse(seedRaw));
+      const parsedSeed = JSON.parse(seedRaw);
+      applyPhysicalPoleDeduplication(parsedSeed);
+      return parsedSeed;
     } catch (err) {
       console.error(`[SQLite] Error llegint ${SEED_FILE}:`, err);
     }
@@ -976,7 +1063,8 @@ function buildInitialSeedData() {
       console.error('[SQLite] No s\'ha pogut carregar punts_de_llum.geojson per defecte:', err);
     }
   }
-  return recalculateLotsAndQuotas(base);
+  applyPhysicalPoleDeduplication(base);
+  return base;
 }
 
 function writeFullStateTransaction(data) {
@@ -1231,9 +1319,17 @@ function ensureDbOpen() {
   if (!initRow || initRow.value !== '1') {
     const seeded = buildInitialSeedData();
     writeFullStateTransaction(seeded);
+    stmts.setMeta.run('pole_dedup_v1', '1');
     cachedDb = seeded;
   } else {
     cachedDb = loadStateFromSqlite();
+    const dedupRow = stmts.getMeta.get('pole_dedup_v1');
+    if (!dedupRow || dedupRow.value !== '1') {
+      const count = applyPhysicalPoleDeduplication(cachedDb);
+      writeFullStateTransaction(cachedDb);
+      stmts.setMeta.run('pole_dedup_v1', '1');
+      console.log(`[SQLite] Deduplicació d'1 suport físic = 1 fanal aplicada (${count} lluminàries secundàries marcades No Aptes).`);
+    }
   }
 }
 
