@@ -1,6 +1,7 @@
 # Node dependencies & build artifacts
 node_modules/
 **/node_modules/
+client/package-lock.json
 client/dist/
 dist/
 

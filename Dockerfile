@@ -1,12 +1,13 @@
 # ==============================================================================
-# Stage 1: Build Frontend (React 19 + Vite 8)
+# Stage 1: Build Frontend (React 19 + Vite 8 on Alpine musl)
 # ==============================================================================
 FROM node:24-alpine AS client-build
 
 WORKDIR /app/client
 
-COPY client/package.json client/package-lock.json ./
-RUN npm ci
+# Use `npm install` without Windows lockfile so npm resolves Alpine `linux-musl` native Vite/Rolldown bindings cleanly
+COPY client/package.json ./
+RUN npm install --no-audit --no-fund
 
 COPY client/ ./
 RUN npm run build
@@ -24,17 +25,15 @@ ENV DATA_DIR=/app/data
 
 # Install backend production dependencies only
 COPY server/package.json server/package-lock.json ./server/
-RUN cd server && npm ci --omit=dev && npm cache clean --force
+RUN cd server && npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
 
 # Copy backend source (including initial seed `server/seed.json`), GIS dataset & built frontend
 COPY server/ ./server/
 COPY punts_de_llum.geojson ./punts_de_llum.geojson
 COPY --from=client-build /app/client/dist ./client/dist
 
-# Prepare persistent SQLite volume directory & grant ownership to non-root `node` user
-RUN mkdir -p /app/data && chown -R node:node /app
-
-USER node
+# Prepare persistent SQLite volume directory
+RUN mkdir -p /app/data
 
 EXPOSE 3001
 
