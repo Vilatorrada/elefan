@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Building2,
   Info,
   Settings,
   LogOut,
@@ -40,12 +39,19 @@ export default function Header({
       {/* Top Row: Branding + Mobile Toggle */}
       <div className="header-top-row">
         <div className="brand-badge">
-          <div className="brand-crest" title="Escut de Sant Joan de Vilatorrada">
-            <Building2 size={22} color="#4a7729" />
+          <div className="brand-crest" title="EleFanT — Elecció de Fanals i Taulells">
+            <img src="/elefant-logo.png" alt="Logotip EleFanT" />
           </div>
           <div className="brand-title">
-            <h1>Ajuntament de Sant Joan de Vilatorrada</h1>
-            <p>{electionInfo?.title || 'Gestió i Repartiment d\'Espais de Propaganda Electoral'}</p>
+            <h1>
+              <span style={{ color: '#fef08a', fontWeight: 900 }}>EleFanT</span>
+              <span style={{ opacity: 0.7, margin: '0 0.4rem', fontWeight: 400 }}>·</span>
+              <span>Ajuntament de Sant Joan de Vilatorrada</span>
+            </h1>
+            <p>
+              Elecció de Fanals i Taulells
+              {electionInfo?.title ? ` — ${electionInfo.title}` : ''}
+            </p>
           </div>
         </div>
 

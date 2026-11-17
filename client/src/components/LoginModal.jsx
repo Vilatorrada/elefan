@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Building2, Lock, User, ShieldCheck, LogIn, Sparkles } from 'lucide-react';
+import { Lock, User, ShieldCheck, LogIn, Sparkles } from 'lucide-react';
 
 export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, parties }) {
   const [username, setUsername] = useState('');
@@ -26,10 +26,33 @@ export default function LoginModal({ onLogin, onDemoLogin, demoLoginEnabled, par
   return (
     <div className="modal-overlay">
       <div className="modal-card" style={{ maxWidth: '480px' }}>
-        <div className="modal-header" style={{ background: '#4a7729', color: 'white' }}>
-          <div className="modal-title" style={{ color: 'white' }}>
-            <Building2 size={22} color="#daaa00" />
-            <span>Accés al Programa de Fanals i Emplaçaments</span>
+        <div className="modal-header" style={{ background: 'linear-gradient(135deg, #4a7729 0%, #375b1e 100%)', color: 'white', padding: '1rem 1.25rem' }}>
+          <div className="modal-title" style={{ color: 'white', gap: '0.85rem' }}>
+            <div style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '12px',
+              background: '#ffffff',
+              border: '2px solid #daaa00',
+              padding: '3px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+              boxShadow: '0 4px 12px rgba(0,0,0,0.22)'
+            }}>
+              <img src="/elefant-logo.png" alt="Logotip EleFanT" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
+            <div>
+              <div style={{ fontSize: '1.35rem', fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+                <span style={{ color: '#fef08a' }}>Ele</span>
+                <span style={{ color: '#ffffff' }}>Fan</span>
+                <span style={{ color: '#fef08a' }}>T</span>
+              </div>
+              <div style={{ fontSize: '0.78rem', fontWeight: 600, color: '#e2e8f0', marginTop: '2px' }}>
+                Elecció de Fanals i Taulells · Sant Joan de Vilatorrada
+              </div>
+            </div>
           </div>
         </div>
 

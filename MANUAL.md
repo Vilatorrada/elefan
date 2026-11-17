@@ -1,7 +1,7 @@
-# 📖 Manual de Funcionament — Gestió i Repartiment d'Espais de Propaganda Electoral (v1.0)
+# 📖 Manual de Funcionament — EleFanT: Elecció de Fanals i Taulells (v1.0)
 
 **Ajuntament de Sant Joan de Vilatorrada**  
-*Oficina d'Estadística i Eleccions · Versió 1.0*
+*Oficina d'Estadística i Eleccions · Aplicació **EleFanT** (Versió 1.0)*
 
 ---
 

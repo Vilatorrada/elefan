@@ -1,6 +1,10 @@
-# 🗳️ Gestió i Repartiment d'Espais de Propaganda Electoral (v1.0)
+# 🐘 EleFanT — Elecció de Fanals i Taulells (v1.0)
 
-Aplicació web *full-stack* per a l'**Ajuntament de Sant Joan de Vilatorrada** per gestionar l'inventari geolocalitzat de faroles (`1.540` punts de llum), la configuració de lots i emplaçaments fixos, la selecció guiada de preferències per part de les candidatures polítiques i el sorteig/repartiment automàtic proporcional (**D'Hondt**), amb generació d'acta oficial en **PDF**, **GeoJSON** i **CSV**.
+<p align="center">
+  <img src="./client/public/elefant-logo.png" alt="Logotip EleFanT" width="140" />
+</p>
+
+Aplicació web *full-stack* (**EleFanT**: **Ele**cció de **Fan**als i **T**aulells) per a l'**Ajuntament de Sant Joan de Vilatorrada** per gestionar l'inventari geolocalitzat de faroles (`1.540` punts de llum), la configuració de lots i emplaçaments fixos (taulells, cartelleres i pancartes), la selecció guiada de preferències per part de les candidatures polítiques i el sorteig/repartiment automàtic proporcional (**D'Hondt**), amb generació d'acta oficial en **PDF**, **GeoJSON** i **CSV**.
 
 - 📖 Consulteu el manual complet d'usuari a **[MANUAL.md](./MANUAL.md)**.
 - 🧠 Consulteu l'arquitectura i el detall tècnic a **[brain.md](./brain.md)**.

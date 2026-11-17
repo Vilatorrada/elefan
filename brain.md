@@ -1,6 +1,6 @@
-# 🧠 BRAIN.md — Sistema de Gestió i Repartiment de Fanals i Emplaçaments Electorals (v1.0)
+# 🧠 BRAIN.md — EleFanT: Elecció de Fanals i Taulells (v1.0)
 
-> Document de context, arquitectura i memòria tècnica del projecte **`eleccions-sant-joan` v1.0** (Ajuntament de Sant Joan de Vilatorrada).
+> Document de context, arquitectura i memòria tècnica d'**`EleFanT` (`eleccions-sant-joan` v1.0)** — aplicació d'**Ele**cció de **Fan**als i **T**aulells de l'Ajuntament de Sant Joan de Vilatorrada.
 
 ---
 

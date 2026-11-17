@@ -1,13 +1,39 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import PDFDocument from 'pdfkit';
 import { getActiveLotLamps, getEffectiveLampCount } from './algorithm.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function resolveLogoPath() {
+  const candidates = [
+    path.join(__dirname, '../client/public/elefant-logo.png'),
+    path.join(__dirname, '../client/dist/elefant-logo.png')
+  ];
+  return candidates.find(p => fs.existsSync(p)) || null;
+}
 
 export function generateReportPdf(dbData, res) {
   const doc = new PDFDocument({ margin: 40, size: 'A4' });
 
   doc.pipe(res);
 
-  // Header Banner - Official Colors of Sant Joan de Vilatorrada
+  // Header Banner - Official Colors of Sant Joan de Vilatorrada + EleFanT Emblem
   doc.rect(0, 0, doc.page.width, 70).fill('#4a7729');
+
+  const logoPath = resolveLogoPath();
+  if (logoPath) {
+    try {
+      doc.roundedRect(doc.page.width - 88, 11, 48, 48, 8)
+         .lineWidth(1.5)
+         .fillAndStroke('#FFFFFF', '#DAAA00');
+      doc.image(logoPath, doc.page.width - 85, 14, { fit: [42, 42], align: 'center', valign: 'center' });
+    } catch {
+      // Ignore logo rendering errors and continue generating PDF
+    }
+  }
 
   doc.fillColor('#FFFFFF')
      .fontSize(16)
@@ -16,7 +42,7 @@ export function generateReportPdf(dbData, res) {
 
   doc.fontSize(10)
      .font('Helvetica')
-     .text("Oficina d'Estadística i Procés Electoral | Propaganda Electoral", 40, 42);
+     .text("EleFanT — Elecció de Fanals i Taulells | Oficina d'Estadística i Eleccions", 40, 42);
 
   doc.moveDown(3);
 
