@@ -1,4 +1,5 @@
 import express from 'express';
+import http from 'http';
 import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
@@ -1649,13 +1650,43 @@ if (fs.existsSync(clientDist)) {
 export { app };
 
 if (path.resolve(process.argv[1] || '') === __filename) {
-  const server = app.listen(PORT, '0.0.0.0', () => {
+  const server = http.createServer(app);
+  let listenRetries = 0;
+
+  const startListening = () => {
+    server.listen(PORT, '0.0.0.0');
+  };
+
+  server.on('listening', () => {
     peekDb(); // Ensure SQLite WAL database is initialized on boot
-    console.log(`Servei Backend (SQLite WAL) de Sant Joan de Vilatorrada actiu a http://0.0.0.0:${PORT}`);
+    console.log(`Servei Backend (SQLite WAL) de Sant Joan de Vilatorrada actiu a http://localhost:${PORT}`);
   });
 
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE' && listenRetries < 5) {
+      listenRetries += 1;
+      setTimeout(() => {
+        server.close();
+        startListening();
+      }, 400);
+      return;
+    }
+    if (err.code === 'EADDRINUSE') {
+      console.error(`[ERROR] El port ${PORT} ja està ocupat per una altra terminal o procés Node.`);
+    } else {
+      console.error('[ERROR SERVIDOR]', err);
+    }
+    closeDb();
+    process.exit(1);
+  });
+
+  let shuttingDown = false;
   const gracefulShutdown = (signal) => {
+    if (shuttingDown) return;
+    shuttingDown = true;
     console.log(`[${signal}] Tancant connexions i consolidant SQLite WAL...`);
+    server.closeIdleConnections?.();
+    server.closeAllConnections?.();
     server.close(() => {
       closeDb();
       process.exit(0);
@@ -1663,9 +1694,11 @@ if (path.resolve(process.argv[1] || '') === __filename) {
     setTimeout(() => {
       closeDb();
       process.exit(0);
-    }, 5000).unref();
+    }, 1500).unref();
   };
 
   process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
   process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+
+  startListening();
 }
