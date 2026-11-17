@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const geojsonPath = path.join(__dirname, '../punts_de_llum.geojson');
-const dbPath = path.join(__dirname, 'data/db.json');
 
 console.log('Llegint punts_de_llum.geojson...');
 const geojsonRaw = fs.readFileSync(geojsonPath, 'utf8');
@@ -98,8 +97,7 @@ db.locationPreferences = {};
 db.allocationResults = null;
 
 saveDb(db);
-fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
 closeDb();
 console.log(
-  `Base de dades SQLite i llavor db.json actualitzades! (${db.lamps.length} totals | ${aptCount} Aptes | ${nonAptCount} No Aptes | ${db.lots.length} lots inicials)`
+  `Base de dades SQLite (eleccions.sqlite) reinicialitzada! (${db.lamps.length} totals | ${aptCount} Aptes | ${nonAptCount} No Aptes | ${db.lots.length} lots inicials)`
 );

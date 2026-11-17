@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const SEED_DB_FILE = path.join(__dirname, 'data', 'db.json');
+const SEED_FILE = path.join(__dirname, 'seed.json');
 
 function resolveDataDir() {
   return process.env.DATA_DIR
@@ -930,18 +930,13 @@ function prepareStatements(conn) {
 }
 
 function buildInitialSeedData() {
-  const dataDirJson = path.join(resolveDataDir(), 'db.json');
-  const candidateFiles = [dataDirJson, SEED_DB_FILE];
-
-  for (const seedPath of candidateFiles) {
-    if (fs.existsSync(seedPath)) {
-      try {
-        const seedRaw = fs.readFileSync(seedPath, 'utf-8');
-        console.log(`[SQLite] Inicialitzant base de dades des de la llavor ${seedPath}...`);
-        return recalculateLotsAndQuotas(JSON.parse(seedRaw));
-      } catch (err) {
-        console.error(`[SQLite] Error llegint ${seedPath}:`, err);
-      }
+  if (fs.existsSync(SEED_FILE)) {
+    try {
+      const seedRaw = fs.readFileSync(SEED_FILE, 'utf-8');
+      console.log(`[SQLite] Inicialitzant base de dades des de la llavor inicial ${SEED_FILE}...`);
+      return recalculateLotsAndQuotas(JSON.parse(seedRaw));
+    } catch (err) {
+      console.error(`[SQLite] Error llegint ${SEED_FILE}:`, err);
     }
   }
 

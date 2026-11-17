@@ -37,15 +37,15 @@ El funcionament funcional i algorísmic pren com a referència el manual oficial
 - **Backend (`server/`)**:
   - **Node.js** (ESM) + **Express 4** + `cors`.
   - **Autenticació i Seguretat**: Tokens signats amb HMAC-SHA256 (`server/auth.js`), *middlewares* `requireAuth`, `requireParty` i `requireAdmin`, i sanejament de `GET /api/data` segons rol (`lamps` complet només s'envia a `ADMIN`) + memòria cau HTTP condicional (`ETag` / `304 Not Modified`).
-  - **Persistència**: Base de dades relacional **SQLite en mode `WAL`** (`eleccions.sqlite`, mitjançant el mòdul natiu `node:sqlite` de Node 24 sense dependències natives C++ `node-gyp`) gestionada per `server/db.js`, amb 9 taules normalitzades (`meta`, `lamps`, `lots`, `locations`, `parties`, `party_lot_preferences`, `party_lot_orders`, `party_location_preferences`, `election_history`), transaccions ACID `BEGIN IMMEDIATE ... COMMIT`, escriptures `O(1)` d'una sola fila per als clics de preferències dels partits, memòria cau hidratada en RAM per a lectures en `< 0.1 ms`, tancament net de `WAL` en `SIGTERM`/`SIGINT`, i migració automàtica al primer arrencada des de la llavor `server/data/db.json` (o `punts_de_llum.geojson`).
+  - **Persistència**: Base de dades relacional **SQLite en mode `WAL`** (`eleccions.sqlite`, mitjançant el mòdul natiu `node:sqlite` de Node 24 sense dependències C++ `node-gyp`) gestionada per `server/db.js`, amb 9 taules normalitzades (`meta`, `lamps`, `lots`, `locations`, `parties`, `party_lot_preferences`, `party_lot_orders`, `party_location_preferences`, `election_history`), transaccions ACID `BEGIN IMMEDIATE ... COMMIT`, escriptures `O(1)` d'una sola fila per als clics de preferències dels partits (`~0,05 ms/tx`), memòria cau hidratada en RAM per a lectures en `< 0,1 ms`, tancament net de `WAL` en `SIGTERM`/`SIGINT`, i inicialització automàtica a la primera arrencada des de la llavor estàtica `server/seed.json` (o `punts_de_llum.geojson`).
   - **Informes**: `pdfkit` per generar l'acta oficial d'assignació en PDF, més exportadors nadius de **GeoJSON** i **CSV** (amb BOM UTF-8 per a Excel).
 
 ### Arbre de Fitxers Clau
 ```text
 eleccions/
-├── Dockerfile                          # Multi-stage Node 22 Alpine per a Dokploy (DATA_DIR=/app/data, port 3001)
-├── .dockerignore                       # Exclusió de node_modules, dist i docs pesants en el context Docker
-├── .gitignore                          # Exclusió de node_modules, dist i .env (mantenint db.json per a repo privat)
+├── Dockerfile                          # Multi-stage Node 24 Alpine per a Dokploy (SQLite WAL a DATA_DIR=/app/data, port 3001)
+├── .dockerignore                       # Exclusió de node_modules, dist, *.sqlite* i docs pesants en el context Docker
+├── .gitignore                          # Exclusió de node_modules, dist, *.sqlite* i .env
 ├── .env.example                        # Plantilla de variables d'entorn per a producció / Dokploy
 ├── README.md                           # Guia ràpida i passos de desplegament a GitHub + Dokploy
 ├── package.json                        # Scripts d'arrencada conjunta, lint i build
@@ -54,14 +54,15 @@ eleccions/
 ├── punts_de_llum.geojson               # Dataset GIS original (1.563 registres / 1.540 geolocalitzats)
 ├── Selecció de fanals i emplaçaments.pdf # Manual funcional i regles de l'algorisme de referència
 ├── server/
-│   ├── index.js                        # API REST Express (port 3001) + servidor estàtic dist/
+│   ├── index.js                        # API REST Express (port 3001) + servidor estàtic dist/ + tancament net WAL
 │   ├── auth.js                         # Tokens HMAC-SHA256 i middlewares d'autorització per rol
-│   ├── db.js                           # Persistència db.json, sincronització lamps<->lots, ETag i quotes (globals i per lot)
+│   ├── db.js                           # Motor relacional SQLite WAL (9 taules), cau en RAM, ETag i quotes proporcionals
+│   ├── seed.json                       # Llavor inicial estàtica (només es llegeix el 1r cop si no existeix eleccions.sqlite)
 │   ├── algorithm.js                    # Motor de repartiment proporcional per lot (D'Hondt intercalat) + emplaçaments
 │   ├── pdf.js                          # Generador d'acta oficial en PDF amb detall farola a farola per lot
-│   ├── import_real_data.js             # Script ETL: importa les 1.540 faroles i deixa 0 lots
+│   ├── import_real_data.js             # Script ETL: reinicialitza SQLite des de punts_de_llum.geojson (0 lots)
 │   └── data/
-│       └── db.json                     # Estat persistent actual de l'aplicació
+│       └── eleccions.sqlite            # Base de dades transaccional viva en execució (+ fitxers -wal / -shm, ignorada a Git)
 └── client/
     ├── index.html
     ├── vite.config.js                  # Configuració Vite + proxy /api -> localhost:3001
@@ -121,7 +122,9 @@ node server/import_real_data.js
 
 ---
 
-## 4. Model de Dades i Estat Per Defecte (`server/data/db.json`)
+## 4. Model de Dades i Esquema Relacional SQLite (`eleccions.sqlite`)
+
+Tota la persistència viva resideix a `eleccions.sqlite` (`DATA_DIR/eleccions.sqlite`, mode `WAL`) distribuïda en **9 taules** (`lamps`, `lots`, `locations`, `parties`, `party_lot_preferences`, `party_lot_orders`, `party_location_preferences`, `election_history` i `meta`). El fitxer `server/seed.json` **no s'utilitza en temps d'execució**: només actua com a llavor inicial estàtica el primer cop que s'obre un volum buit (p. ex. el primer desplegament a `/app/data` de Dokploy).
 
 - **`lamps` (1.540 faroles reals en 3 estats)**: Col·lecció principal de punts d'enllumenat públic (`id`, `codi`, `carrer`, `num`, `suport`, `lampada`, `potencia`, `lat`, `lng`, `status`: `'NO_APTA' | 'APTA' | 'SELECCIONADA'`, `suitable`, `selected`, `lockedUnsuitable`, `unsuitableReason`, `lotId`). Per defecte `isAptSupport(suport)` inicialitza `Columna` (970) i `Bàcul` (136) com a `'APTA'` i la resta (434) com a `'NO_APTA'`, però `normalizeLampState(lamp)` respecta qualsevol canvi d'aptitud desat per l'administració via `/api/admin/lamp/aptitude`.
 - **`lots` (`[]` buit per defecte, exclusivament faroles `SELECCIONADA`)**: Lots creats manualment per l'administració. Per regla de negoci estricta (`Lot ⊆ SELECCIONADA`), un lot **només pot contenir faroles amb `status === 'SELECCIONADA'`** (si una farola es reverteix a `APTA` o `NO_APTA`, `recalculateLotsAndQuotas(db)` la retira automàticament del lot i elimina qualsevol lot que quedi buit). Cada lot hidrata `lamps`, `coords`, `totalLampCount`, `lampCount`, `partyMinQuotas` (part entera garantida), `partyMaxQuotas` (sostre proporcional amb `+1` de resta), `remainderSlots` i `partyQuotas`.
@@ -136,8 +139,8 @@ node server/import_real_data.js
 
 | Mètode | Ruta | Accés | Descripció |
 | :--- | :--- | :--- | :--- |
-| `GET` | `/api/health` | Públic | *Healthcheck* lleuger (`{ status: 'ok', version: '1.0.0' }`) per a Docker, Dokploy i Traefik. |
-| `POST` | `/api/auth/login` | Públic | Valida credencials (`ADMIN_USERNAME`/`ADMIN_PASSWORD` d'entorn o `db.json`) i emet token HMAC-SHA256. |
+| `GET` | `/api/health` | Públic | *Healthcheck* lleuger (`{ status: 'ok', engine: 'sqlite-wal', version: '1.0.0' }`) per a Docker, Dokploy i Traefik. |
+| `POST` | `/api/auth/login` | Públic | Valida credencials (`ADMIN_USERNAME`/`ADMIN_PASSWORD` d'entorn o desades a SQLite) i emet token HMAC-SHA256. |
 | `POST` | `/api/auth/demo-login` | Públic (Dev) | Accés ràpid de prova sense exposar contrasenyes al client. |
 | `GET` | `/api/data` | Opcional | Estat sanejat per rol (`lamps` per a `ADMIN`, `lampStats` públic) amb `ETag` (`304`). |
 | `POST` | `/api/preferences/lot-lamps` | `PARTY` (`OPEN`) | Desa l'ordre de prioritat (`orderedLampCodes`) de les faroles seleccionades dins d'un lot (també aliada a `/api/preferences/lot`). |

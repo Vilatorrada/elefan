@@ -63,6 +63,6 @@ git push -u origin main
      - **Type**: `Volume`
      - **Volume Name**: `eleccions-santjoan-data`
      - **Mount Path (dins del contenidor)**: `/app/data`
-   - *Com funciona*: En el **primer desplegament**, com que `/app/data/eleccions.sqlite` encara no existeix, el servidor inicialitza automàticament la base de dades **SQLite (`WAL`)** important la llavor inicial (`server/data/db.json` del repositori). En **tots els desplegaments futurs**, Dokploy conserva intacta la base de dades transaccional `/app/data/eleccions.sqlite`.
+   - *Com funciona*: En el **primer desplegament**, com que `/app/data/eleccions.sqlite` encara no existeix, el servidor crea automàticament la base de dades **SQLite (`WAL`)** important la llavor inicial [server/seed.json](./server/seed.json). A partir d'aquell instant (i en **tots els desplegaments futurs**), l'aplicació llegeix i escriu exclusivament a la base de dades transaccional `/app/data/eleccions.sqlite`.
 6. **Domains**: A la pestanya **Domains**, afegiu el vostre domini/subdomini (p. ex. `eleccions.santjoanvilatorrada.cat`), activeu **HTTPS (Let's Encrypt)** i indiqueu **`Container Port: 3001`**.
 7. Premeu **Deploy**!

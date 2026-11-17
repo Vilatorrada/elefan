@@ -26,7 +26,7 @@ ENV DATA_DIR=/app/data
 COPY server/package.json server/package-lock.json ./server/
 RUN cd server && npm ci --omit=dev && npm cache clean --force
 
-# Copy backend source (including initial seed `server/data/db.json`), GIS dataset & built frontend
+# Copy backend source (including initial seed `server/seed.json`), GIS dataset & built frontend
 COPY server/ ./server/
 COPY punts_de_llum.geojson ./punts_de_llum.geojson
 COPY --from=client-build /app/client/dist ./client/dist

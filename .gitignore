@@ -12,7 +12,7 @@ dist-ssr/
 .env.*
 !.env.example
 
-# SQLite runtime database & WAL/SHM journals (initialized automatically from db.json seed)
+# SQLite runtime database & WAL/SHM journals (initialized automatically from server/seed.json on first boot)
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm
